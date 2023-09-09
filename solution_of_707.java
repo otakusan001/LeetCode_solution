@@ -1,9 +1,11 @@
+//单链表实现
 public class ListNode {
     // 结点的值
     int val;
     // 下一个结点
     ListNode next;
-
+    // 节点的构造函数(无参数)
+    public ListNode(){};
     // 节点的构造函数(有一个参数)
     public ListNode(int val) {
         this.val = val;
@@ -22,7 +24,7 @@ class MyLinkedList {
     }
     
     public int get(int index) {
-        if(size < index + 1) return -1; //索引位数已经超出链表元素个数
+        if(index < 0 || size < index + 1) return -1; //索引非法
         ListNode current = head;
         while(index >= 0){
                 current = current.next;
@@ -68,7 +70,7 @@ class MyLinkedList {
     
     public void deleteAtIndex(int index) {
         ListNode current = head;
-        if(index <= size -1){
+        if(index >= 0 && index <= size -1){
             while(index-- > 0){
                 current = current.next;
             }
