@@ -9,11 +9,6 @@ class MyQueue {
     }
     
     public void push(int x) {
-        if(stIn.isEmpty() && !stOut.isEmpty()){
-            while(!stOut.isEmpty()){
-                stIn.push(stOut.pop());
-            }
-        }
         stIn.push(x);
     }
     
